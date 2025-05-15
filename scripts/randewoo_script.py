@@ -5,6 +5,10 @@ import time
 import random
 import csv
 
+with open('perfume_test.csv', 'w', encoding='utf-8', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(["Name", "Brand", "Type", "Price", "Rating", "Review", "Year", "Sex", "Group", "Notes", "High notes", "Middle notes", "Base notes", "Perfumer", "Country", "Event"])
+
 URL = "https://randewoo.ru/category/parfyumeriya"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0",
@@ -61,7 +65,7 @@ def url_f(catalog_url, year, sex, group, note, high_note, middle_note, base_note
         return catalog_url, year, sex, group, note, high_note, middle_note, base_note, perfumer, country, event
 
 
-for i in tqdm(range(244, 298), mininterval=10):
+for i in tqdm(range(1, 298), mininterval=10):
     items_found = []
     try:
         params = {"page": f"{i + 1}"}
