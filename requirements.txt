@@ -1,1 +1,9 @@
-
+requests
+bs4
+tqdm
+pandas
+matplotlib
+seaborn
+scipy
+numpy
+IPython
